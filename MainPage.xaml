@@ -4,210 +4,238 @@
              x:Class="TicTacToe.MainPage">
 
     <ScrollView>
-        <Grid BackgroundColor="DarkGray" ColumnSpacing="5" RowSpacing="5">
+        <Grid Padding="10" ColumnSpacing="8" RowSpacing="8">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label 
-            x:Name="LabelX" 
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Text="Player X Score:"
-            FontSize="28"
-            FontAttributes="Bold"
-            HorizontalTextAlignment="Start"
-            VerticalTextAlignment="Center"
-            TextColor="White"
-            FontFamily="Consolas"
-            Background="Black"
-            />
-            <Label 
-            x:Name="LabelO" 
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Text="Player O Score:"
-            FontSize="28"
-            FontAttributes="Bold"
-            HorizontalTextAlignment="Start"
-            VerticalTextAlignment="Center"
-            TextColor="White"
-            FontFamily="Consolas"
-            Background="Black"
-            />
 
-            <Label 
-            x:Name="LabelXScore" 
-            Grid.Row="0"
-            Grid.Column="3"
-            Text="0"
-            FontSize="28"
+            <!-- Título del juego -->
+            <Frame Grid.Row="0" 
+           Grid.ColumnSpan="3" 
+           BackgroundColor="#1E1E1E" 
+           Margin="0,0,0,10" 
+           Padding="15"
+           CornerRadius="10">
+                <Label Text="TRES EN RAYA" 
+               FontSize="32" 
+               FontAttributes="Bold" 
+               TextColor="White" 
+               HorizontalOptions="Center"/>
+            </Frame>
+
+            <!-- Marcadores de puntuación -->
+            <Frame Grid.Row="1" 
+           Grid.Column="0" 
+           Grid.ColumnSpan="3" 
+           BackgroundColor="#1E1E1E" 
+           Margin="0,0,0,15" 
+           Padding="15"
+           CornerRadius="10">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
+                    <!-- Puntuación jugador X -->
+                    <Label x:Name="LabelX" 
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Jugador X:"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+
+                    <Label x:Name="LabelXScore" 
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Text="0"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#4CAF50"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"/>
+
+                    <!-- Puntuación jugador O -->
+                    <Label x:Name="LabelO" 
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Jugador O:"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   Margin="0,10,0,0"
+                   HorizontalOptions="Start"/>
+
+                    <Label x:Name="LabelOScore" 
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Text="0"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#F44336"
+                   VerticalOptions="Center"
+                   Margin="0,10,0,0"
+                   HorizontalOptions="End"/>
+                </Grid>
+            </Frame>
+
+            <!-- Tablero de juego -->
+            <!-- Primera fila -->
+            <Button x:Name="Button7"
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
             FontAttributes="Bold"
-            HorizontalTextAlignment="End"
-            VerticalTextAlignment="Center"
+            Text=""
             TextColor="White"
-            FontFamily="Consolas"
-            Background="Black"
-            />
-            <Label 
-            x:Name="LabelOScore" 
-            Grid.Row="1"
-            Grid.Column="3"
-            Text="0"
-            FontSize="28"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button8"
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
             FontAttributes="Bold"
-            HorizontalTextAlignment="End"
-            VerticalTextAlignment="Center"
-            TextColor="White"
-            FontFamily="Consolas"
-            Background="Black"
-            />
-            <Button
-            x:Name="Button1"
-            Grid.Row="4"
-            Grid.Column="0"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
             Text=""
             TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button2"
-            Grid.Row="4"
-            Grid.Column="1"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button3"
-            Grid.Row="4"
-            Grid.Column="2"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button4"
-            Grid.Row="3"
-            Grid.Column="0"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button5"
-            Grid.Row="3"
-            Grid.Column="1"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button6"
-            Grid.Row="3"
-            Grid.Column="2"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button7"
-            Grid.Row="2"
-            Grid.Column="0"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button8"
-            Grid.Row="2"
-            Grid.Column="1"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
-            Text=""
-            TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="Button9"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button9"
             Grid.Row="2"
             Grid.Column="2"
-            BackgroundColor="BlueViolet"
-            CornerRadius="0"
-            FontSize="130"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
             Text=""
             TextColor="White"
-            Clicked="ButtonClick"
-            />
-            <Button
-            x:Name="ButtonReset"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <!-- Segunda fila -->
+            <Button x:Name="Button4"
+            Grid.Row="3"
+            Grid.Column="0"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button5"
+            Grid.Row="3"
+            Grid.Column="1"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button6"
+            Grid.Row="3"
+            Grid.Column="2"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <!-- Tercera fila -->
+            <Button x:Name="Button1"
+            Grid.Row="4"
+            Grid.Column="0"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button2"
+            Grid.Row="4"
+            Grid.Column="1"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <Button x:Name="Button3"
+            Grid.Row="4"
+            Grid.Column="2"
+            BackgroundColor="#8A2BE2"
+            CornerRadius="10"
+            FontSize="60"
+            FontAttributes="Bold"
+            Text=""
+            TextColor="White"
+            Clicked="ButtonClicked"
+            Margin="2"/>
+
+            <!-- Botones de control -->
+            <Button x:Name="ButtonReset"
             Grid.Row="5"
             Grid.Column="0"
-            BackgroundColor="DarkGray"
-            CornerRadius="0"
-            FontSize="15"
-            Text="Reset"
+            BackgroundColor="#607D8B"
+            CornerRadius="10"
+            FontSize="16"
             FontAttributes="Bold"
+            Text="Reiniciar"
             TextColor="White"
             Clicked="ButtonResetClick"
-            />
-            <Button
-            x:Name="ButtonNewGame"
+            Margin="3,15,3,3"/>
+
+            <Button x:Name="ButtonNewGame"
             Grid.Row="5"
             Grid.Column="1"
-            BackgroundColor="DarkGray"
-            CornerRadius="0"
-            FontSize="15"
-            Text="New Game"
+            BackgroundColor="#4CAF50"
+            CornerRadius="10"
+            FontSize="16"
             FontAttributes="Bold"
+            Text="Nuevo Juego"
             TextColor="White"
             Clicked="ButtonNewGameClick"
-            />
-            <Button
-            x:Name="ButtonExit"
+            Margin="3,15,3,3"/>
+
+            <Button x:Name="ButtonExit"
             Grid.Row="5"
             Grid.Column="2"
-            BackgroundColor="DarkGray"
-            CornerRadius="0"
-            FontSize="15"
-            Text="Exit"
+            BackgroundColor="#F44336"
+            CornerRadius="10"
+            FontSize="16"
             FontAttributes="Bold"
+            Text="Salir"
             TextColor="White"
             Clicked="ButtonExitClick"
-            />
+            Margin="3,15,3,3"/>
         </Grid>
     </ScrollView>
 
