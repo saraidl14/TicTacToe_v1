@@ -157,13 +157,13 @@
 
             if (!turnoO)
             {
-                b.Text = "X"; // Mantener para la lógica del juego
+              //  b.Text = "X"; // Mantener para la lógica del juego
                 b.TextColor = Colors.Transparent; // Hacer el texto invisible
                 b.ImageSource = ImageSource.FromFile("img_x.png");
             }
             else
             {
-                b.Text = "O"; // Mantener para la lógica del juego
+             //   b.Text = "O"; // Mantener para la lógica del juego
                 b.TextColor = Colors.Transparent; // Hacer el texto invisible
                 b.ImageSource = ImageSource.FromFile("img_o.png");
             }
