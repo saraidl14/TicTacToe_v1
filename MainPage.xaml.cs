@@ -1,4 +1,17 @@
-﻿namespace TicTacToe
+﻿/* Nombre: Practica 2
+ * Autor:  Sara Iglesias
+ * 
+ * Fecha: 10/03/25 
+ * Fecha entrega: ´20/03/2025
+ * Descripción: Programa que mantiene la lógica de un juego de Tic Tac Toe para dos jugadores.
+ * Versión: 3.0 primera versión compilable
+ *          
+ * 
+ * @param: 
+ * return:
+ */
+
+namespace TicTacToe
 {
     public partial class MainPage : ContentPage
     {
